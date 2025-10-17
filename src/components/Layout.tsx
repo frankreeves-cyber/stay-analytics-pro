@@ -84,10 +84,10 @@ const Layout = ({ children }: LayoutProps) => {
                   to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
-                    "flex items-center space-x-3 px-3 py-2 transition-colors font-bold border-l-4",
+                    "flex items-center space-x-3 px-3 py-2 transition-colors font-bold border-l-4 no-underline",
                     isActive
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground border-sidebar-primary"
-                      : "text-sidebar-foreground hover:bg-sidebar-accent/50 border-transparent"
+                      ? "bg-sidebar-accent !text-sidebar-accent-foreground border-sidebar-primary"
+                      : "!text-sidebar-foreground hover:bg-sidebar-accent/50 border-transparent"
                   )}
                 >
                   <Icon className="w-5 h-5 flex-shrink-0" />
@@ -102,7 +102,7 @@ const Layout = ({ children }: LayoutProps) => {
             <Button
               variant="ghost"
               onClick={handleLogout}
-              className="w-full justify-start text-sidebar-foreground hover:bg-sidebar-accent/50 border-0 shadow-none font-bold"
+              className="w-full justify-start !text-sidebar-foreground hover:bg-sidebar-accent/50 border-0 shadow-none font-bold"
             >
               <LogOut className="w-5 h-5 mr-3" />
               Logout
