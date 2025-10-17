@@ -55,14 +55,14 @@ All colors MUST be HSL.
 
     --radius: 0rem; /* GOV.UK uses sharp corners */
 
-    /* Sidebar colors - light background with dark text */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 180 6% 4%;
+    /* Sidebar colors - dark background with white text */
+    --sidebar-background: 180 6% 4%;
+    --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 212 71% 41%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 212 71% 95%;
-    --sidebar-accent-foreground: 180 6% 4%;
-    --sidebar-border: 200 4% 70%;
+    --sidebar-accent: 192 10% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 192 10% 34%;
     --sidebar-ring: 48 100% 50%;
 
     /* Chart colors - using GOV.UK palette */
