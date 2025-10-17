@@ -1,12 +1,12 @@
 import { ReactNode, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { 
-  LayoutDashboard, 
-  GitBranch, 
-  Filter, 
-  TrendingUp, 
-  Users, 
-  AlertTriangle, 
+import {
+  LayoutDashboard,
+  GitBranch,
+  Filter,
+  TrendingUp,
+  Users,
+  AlertTriangle,
   Activity,
   LogOut,
   Menu,
@@ -17,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { logout } from "@/lib/auth";
 
 interface LayoutProps {
   children: ReactNode;
@@ -38,7 +39,7 @@ const Layout = ({ children }: LayoutProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
-    localStorage.removeItem("guestjourney_auth");
+    logout();
     toast.success("Logged out successfully");
     navigate("/auth");
   };

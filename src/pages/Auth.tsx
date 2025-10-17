@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart3 } from "lucide-react";
 import { toast } from "sonner";
+import { validateAdminCredentials, login } from "@/lib/auth";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -17,14 +18,20 @@ const Auth = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate authentication
+    // Validate admin credentials
     setTimeout(() => {
-      if (email && password) {
-        localStorage.setItem("guestjourney_auth", "true");
-        toast.success("Welcome to GuestJourney");
+      if (!email || !password) {
+        toast.error("Please enter email and password");
+        setIsLoading(false);
+        return;
+      }
+
+      if (validateAdminCredentials(email, password)) {
+        login();
+        toast.success("Welcome to GuestJourney, Admin");
         navigate("/");
       } else {
-        toast.error("Please enter email and password");
+        toast.error("Invalid credentials. Access denied.");
       }
       setIsLoading(false);
     }, 1000);
