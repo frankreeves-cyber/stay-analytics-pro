@@ -62,12 +62,71 @@ This project is built with:
 
 ## How can I deploy this project?
 
+### Option 1: Deploy to Render.com (Recommended)
+
+This project includes full Render.com deployment support:
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+**Quick Start:**
+1. See [RENDER_QUICKSTART.md](./RENDER_QUICKSTART.md) for 5-minute setup
+2. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions
+
+**Key Features:**
+- One-click deployment with `render.yaml`
+- Automatic SSL certificates
+- Global CDN included
+- Free tier available
+- Secure environment variable management
+
+### Option 2: Deploy via Lovable
+
 Simply open [Lovable](https://lovable.dev/projects/303d1968-0b04-434e-9796-9e52d82c97be) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+## Authentication
 
-Yes, you can!
+This project now includes secure admin-only authentication:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **Default Credentials** (development):
+  - Email: `admin@guestjourney.com`
+  - Password: `admin123`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**IMPORTANT**: Change these credentials before deploying to production!
+
+See [ADMIN_SETUP.md](./ADMIN_SETUP.md) for complete authentication setup instructions.
+
+## Can I connect a custom domain to my project?
+
+**For Render.com deployments:**
+- Go to your static site settings
+- Click "Custom Domains"
+- Add your domain and configure DNS records
+- Free SSL certificates provided automatically
+
+**For Lovable deployments:**
+- Navigate to Project > Settings > Domains
+- Click Connect Domain
+- Read more: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Available Scripts
+
+```bash
+npm run dev              # Start development server
+npm run build            # Build for production
+npm run build:dev        # Build in development mode
+npm run build:render     # Build using Render script
+npm run preview          # Preview production build
+npm run lint             # Run ESLint
+npm run deploy:check     # Run lint + build (pre-deploy check)
+```
+
+## Project Structure
+
+See [CLAUDE.md](./CLAUDE.md) for complete project architecture and development guidelines.
+
+## Documentation
+
+- [ADMIN_SETUP.md](./ADMIN_SETUP.md) - Admin authentication setup
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - Detailed deployment guide for Render.com
+- [RENDER_QUICKSTART.md](./RENDER_QUICKSTART.md) - Quick deployment checklist
+- [CLAUDE.md](./CLAUDE.md) - Project architecture and development guide

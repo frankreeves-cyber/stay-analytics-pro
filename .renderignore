@@ -1,0 +1,31 @@
+# Files to ignore during Render deployment
+
+# Development files
+.env
+.env.local
+.env.development
+*.local
+
+# Documentation (optional, remove if you want docs deployed)
+*.rtf
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Git files
+.git/
+.gitignore
+
+# Test files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__/
+
+# Development dependencies
+node_modules/
