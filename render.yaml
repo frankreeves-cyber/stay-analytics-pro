@@ -25,4 +25,4 @@ services:
       - key: VITE_ADMIN_PASSWORD
         sync: false
       - key: NODE_VERSION
-        value: 18
+        value: 20
