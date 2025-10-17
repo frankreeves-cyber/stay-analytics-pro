@@ -23,7 +23,7 @@ const JourneyExplorer = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Journey Explorer</h1>
+        <h1 className="text-3xl font-bold">Journey Explorer</h1>
         <div className="flex items-center space-x-2">
           <Button variant="outline" size="sm">1st Visit</Button>
           <Button variant="outline" size="sm">2nd Visit</Button>
@@ -33,42 +33,42 @@ const JourneyExplorer = () => {
       </div>
 
       {/* Sankey Diagram Placeholder */}
-      <Card className="shadow-sm">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-lg font-semibold">Visitor Flow</CardTitle>
+          <CardTitle className="text-xl font-bold">Visitor Flow</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-80 bg-muted/30 rounded-lg flex items-center justify-center">
+          <div className="h-80 bg-muted flex items-center justify-center">
             <div className="text-center space-y-2">
-              <p className="text-lg font-semibold text-muted-foreground">Sankey Flow Visualization</p>
+              <p className="text-lg font-bold">Sankey Flow Visualization</p>
               <p className="text-sm text-muted-foreground">Landing → Key Pages → Booking Engine → Checkout</p>
               <div className="flex items-center justify-center space-x-8 mt-6">
                 <div className="text-center">
-                  <div className="w-24 h-24 bg-chart-1/20 border-4 border-chart-1 rounded-lg flex items-center justify-center mb-2">
+                  <div className="w-24 h-24 bg-chart-1/20 border-4 border-chart-1 flex items-center justify-center mb-2">
                     <span className="text-2xl font-bold text-chart-1">100%</span>
                   </div>
-                  <p className="text-xs font-medium">Landing</p>
+                  <p className="text-xs font-bold">Landing</p>
                 </div>
                 <div className="text-4xl text-muted-foreground">→</div>
                 <div className="text-center">
-                  <div className="w-24 h-24 bg-chart-2/20 border-4 border-chart-2 rounded-lg flex items-center justify-center mb-2">
+                  <div className="w-24 h-24 bg-chart-2/20 border-4 border-chart-2 flex items-center justify-center mb-2">
                     <span className="text-2xl font-bold text-chart-2">68%</span>
                   </div>
-                  <p className="text-xs font-medium">Key Pages</p>
+                  <p className="text-xs font-bold">Key Pages</p>
                 </div>
                 <div className="text-4xl text-muted-foreground">→</div>
                 <div className="text-center">
-                  <div className="w-24 h-24 bg-chart-3/20 border-4 border-chart-3 rounded-lg flex items-center justify-center mb-2">
+                  <div className="w-24 h-24 bg-chart-3/20 border-4 border-chart-3 flex items-center justify-center mb-2">
                     <span className="text-2xl font-bold text-chart-3">32%</span>
                   </div>
-                  <p className="text-xs font-medium">Search</p>
+                  <p className="text-xs font-bold">Search</p>
                 </div>
                 <div className="text-4xl text-muted-foreground">→</div>
                 <div className="text-center">
-                  <div className="w-24 h-24 bg-success/20 border-4 border-success rounded-lg flex items-center justify-center mb-2">
+                  <div className="w-24 h-24 bg-success/20 border-4 border-success flex items-center justify-center mb-2">
                     <span className="text-2xl font-bold text-success">3.2%</span>
                   </div>
-                  <p className="text-xs font-medium">Booked</p>
+                  <p className="text-xs font-bold">Booked</p>
                 </div>
               </div>
             </div>
@@ -77,32 +77,32 @@ const JourneyExplorer = () => {
       </Card>
 
       {/* Top Paths Table */}
-      <Card className="shadow-sm">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-lg font-semibold">Top Conversion Paths</CardTitle>
+          <CardTitle className="text-xl font-bold">Top Conversion Paths</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-muted-foreground">Rank</th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-muted-foreground">Path</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-muted-foreground">Visitors</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-muted-foreground">Avg Intent</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-muted-foreground">Conversion</th>
+                <tr className="border-b-2 border-border">
+                  <th className="text-left py-3 px-4 text-sm font-bold">Rank</th>
+                  <th className="text-left py-3 px-4 text-sm font-bold">Path</th>
+                  <th className="text-right py-3 px-4 text-sm font-bold">Visitors</th>
+                  <th className="text-right py-3 px-4 text-sm font-bold">Avg Intent</th>
+                  <th className="text-right py-3 px-4 text-sm font-bold">Conversion</th>
                 </tr>
               </thead>
               <tbody>
                 {paths.map((path) => (
-                  <tr key={path.rank} className="border-b border-border hover:bg-muted/50 transition-colors">
-                    <td className="py-3 px-4 text-sm font-medium">#{path.rank}</td>
+                  <tr key={path.rank} className="border-b border-border hover:bg-muted transition-colors">
+                    <td className="py-3 px-4 text-sm font-bold">#{path.rank}</td>
                     <td className="py-3 px-4 text-sm">{path.path}</td>
-                    <td className="py-3 px-4 text-sm text-right font-medium">{path.visitors.toLocaleString()}</td>
+                    <td className="py-3 px-4 text-sm text-right font-bold">{path.visitors.toLocaleString()}</td>
                     <td className="py-3 px-4 text-sm text-right">
                       <Badge variant="secondary">{path.intent}%</Badge>
                     </td>
-                    <td className="py-3 px-4 text-sm text-right font-semibold text-success">
+                    <td className="py-3 px-4 text-sm text-right font-bold text-success">
                       {path.conversion}%
                     </td>
                   </tr>
@@ -114,16 +114,16 @@ const JourneyExplorer = () => {
       </Card>
 
       {/* Key Page Impact */}
-      <Card className="shadow-sm">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-lg font-semibold">Key Page Impact on Intent</CardTitle>
+          <CardTitle className="text-xl font-bold">Key Page Impact on Intent</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
             {keyPages.map((page) => (
-              <div key={page.page} className="flex items-center justify-between p-3 border border-border rounded-lg hover:bg-muted/50 transition-colors">
+              <div key={page.page} className="flex items-center justify-between p-3 border-2 border-border hover:bg-muted transition-colors">
                 <div className="flex-1">
-                  <p className="font-medium text-sm">{page.page}</p>
+                  <p className="font-bold text-sm">{page.page}</p>
                   <p className="text-xs text-muted-foreground">{page.visits.toLocaleString()} visits</p>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -134,7 +134,7 @@ const JourneyExplorer = () => {
                   ) : (
                     <div className="w-4 h-4" />
                   )}
-                  <span className={`text-sm font-semibold ${
+                  <span className={`text-sm font-bold ${
                     page.intentDelta > 0 ? "text-success" : 
                     page.intentDelta < 0 ? "text-destructive" : 
                     "text-muted-foreground"

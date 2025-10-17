@@ -49,7 +49,7 @@ const Layout = ({ children }: LayoutProps) => {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-card rounded-lg shadow-md"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-card border-2 border-border focus:outline-none focus:ring-3 focus:ring-ring font-bold"
       >
         {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
@@ -57,18 +57,18 @@ const Layout = ({ children }: LayoutProps) => {
       {/* Left Navigation */}
       <aside
         className={cn(
-          "fixed lg:static inset-y-0 left-0 z-40 w-64 bg-sidebar border-r border-sidebar-border transition-transform duration-300 ease-in-out",
+          "fixed lg:static inset-y-0 left-0 z-40 w-64 bg-sidebar border-r-4 border-sidebar-border transition-transform duration-300 ease-in-out",
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
       >
         <div className="h-full flex flex-col">
           {/* Logo */}
-          <div className="h-16 flex items-center px-6 border-b border-sidebar-border">
+          <div className="h-16 flex items-center px-6 border-b-2 border-sidebar-border">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-sidebar-primary rounded-lg flex items-center justify-center">
-                <LayoutDashboard className="w-5 h-5 text-sidebar-primary-foreground" />
+              <div className="w-8 h-8 bg-sidebar-primary flex items-center justify-center font-bold text-sidebar-primary-foreground">
+                GJ
               </div>
-              <span className="text-lg font-semibold text-sidebar-foreground">GuestJourney</span>
+              <span className="text-lg font-bold text-sidebar-foreground">GuestJourney</span>
             </div>
           </div>
 
@@ -84,10 +84,10 @@ const Layout = ({ children }: LayoutProps) => {
                   to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
-                    "flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors",
+                    "flex items-center space-x-3 px-3 py-2 transition-colors font-bold border-l-4",
                     isActive
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
-                      : "text-sidebar-foreground hover:bg-sidebar-accent/50"
+                      ? "bg-sidebar-accent text-sidebar-accent-foreground border-sidebar-primary"
+                      : "text-sidebar-foreground hover:bg-sidebar-accent/50 border-transparent"
                   )}
                 >
                   <Icon className="w-5 h-5 flex-shrink-0" />
@@ -98,11 +98,11 @@ const Layout = ({ children }: LayoutProps) => {
           </nav>
 
           {/* Logout Button */}
-          <div className="p-3 border-t border-sidebar-border">
+          <div className="p-3 border-t-2 border-sidebar-border">
             <Button
               variant="ghost"
               onClick={handleLogout}
-              className="w-full justify-start text-sidebar-foreground hover:bg-sidebar-accent/50"
+              className="w-full justify-start text-sidebar-foreground hover:bg-sidebar-accent/50 border-0 shadow-none font-bold"
             >
               <LogOut className="w-5 h-5 mr-3" />
               Logout
@@ -114,16 +114,16 @@ const Layout = ({ children }: LayoutProps) => {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top Bar */}
-        <header className="h-16 bg-card border-b border-border flex items-center justify-between px-6 sticky top-0 z-30">
+        <header className="h-16 bg-card border-b-2 border-border flex items-center justify-between px-6 sticky top-0 z-30">
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm">
-              <Calendar className="w-4 h-4 text-muted-foreground" />
-              <span className="font-medium">Last 30 days</span>
+            <div className="flex items-center space-x-2 text-sm font-bold">
+              <Calendar className="w-4 h-4" />
+              <span>Last 30 days</span>
             </div>
           </div>
           
           <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="sm">
+            <Button variant="secondary" size="sm">
               Compare
             </Button>
             <Button variant="ghost" size="icon">
